@@ -31,14 +31,7 @@ sudo systemctl enable --now postgresql
 yay -S pgvector   # or: paru -S pgvector
 ```
 
-### 2. Create the database
-
-```bash
-createdb vec_notes
-psql vec_notes -c "CREATE EXTENSION vector;"
-```
-
-### 3. Ollama
+### 2. Ollama
 
 **macOS**
 ```bash
@@ -57,7 +50,7 @@ Then pull the embedding model:
 ollama pull nomic-embed-text
 ```
 
-### 4. whisper-cli + model
+### 3. whisper-cli + model
 
 **macOS**
 ```bash
@@ -76,7 +69,7 @@ curl -L -o ~/whisper-models/ggml-base.en-q8_0.bin \
   https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.en-q8_0.bin
 ```
 
-### 5. .NET SDK 10
+### 4. .NET SDK 10
 
 **macOS**
 ```bash
@@ -88,7 +81,7 @@ brew install dotnet
 sudo pacman -S dotnet-sdk
 ```
 
-### 6. Clone and configure
+### 5. Clone and configure
 
 ```bash
 git clone <repo-url>
@@ -107,13 +100,13 @@ Edit `appsettings.json` and set the following:
 | `WhisperCpp:ModelPath` | Absolute path to the downloaded `.bin` model file |
 | `AudioStorage:Path` | Directory where uploaded audio files are stored (default: `./audio-uploads`) |
 
-### 7. Apply database migrations
+### 6. Apply database migrations
 
 ```bash
 dotnet ef database update
 ```
 
-### 8. Frontend
+### 7. Frontend
 
 ```bash
 cd web
@@ -121,11 +114,11 @@ cp .env.example .env
 npm install
 ```
 
-`.env` defaults to `PUBLIC_API_URL=http://localhost:5111` which matches the backend.
+`.env` defaults to `PUBLIC_API_URL=http://localhost:5000` which matches the backend.
 
 ## Running
 
-**Backend** (http://localhost:5111)
+**Backend** (http://localhost:5000)
 ```bash
 dotnet run
 ```
@@ -142,7 +135,7 @@ npm run dev
 python scripts/seed.py scripts/tts-audio/
 
 # or a single file
-python scripts/seed.py path/to/recording.wav --base-url http://localhost:5111
+python scripts/seed.py path/to/recording.wav --base-url http://localhost:5000
 ```
 
 The seed script runs each audio file through the full upload → transcribe → confirm pipeline.
