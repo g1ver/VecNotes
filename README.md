@@ -84,7 +84,7 @@ sudo pacman -S dotnet-sdk
 ### 5. Clone and configure
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/g1ver/VecNotes.git
 cd VecNotes
 cp appsettings.example.json appsettings.json
 ```
