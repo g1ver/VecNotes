@@ -1,0 +1,72 @@
+# VecNotes Search Test Queries
+# Format: query | expected note(s) | category
+
+# 1. Direct Topic Matches (baseline)
+bench press plateau | 12 | direct
+sourdough starter | 26 | direct
+cold water immersion | 13 | direct
+window functions in SQL | 23 | direct
+Japan cherry blossom trip planning | 49 | direct
+salary negotiation anchoring | 39 | direct
+mechanical keyboard build | 51 | direct
+
+# 2. Semantic Equivalents (different words, same meaning)
+not getting enough sleep is hurting my concentration | 10 | semantic
+too scared to talk to anyone at a networking event | 42 | semantic
+left hand and right hand won't coordinate on an instrument | 21 | semantic
+protagonist has no reason to stay in the story | 31 | semantic
+my grout lines came out uneven in the bathroom | 52 | semantic
+waves keep knocking me off the board before I can stand up | 48 | semantic
+the bird with the electric blue color | 46 | semantic
+
+# 3. Specific Buried Details (concrete facts in longer notes)
+nine degrees celsius plunge pool | 13 | precision
+eighteen mile training run hip flexor | 11 | precision
+Edgar the sourdough starter three months old | 26 | precision
+forty-two thousand words second act | 31 | precision
+eighty percent global index funds portfolio | 37 | precision
+Boba U4T switches lubing | 51 | precision
+V4 boulder problem sloper to crimp | 56 | precision
+Greek fire siege of Constantinople | 60 | precision
+
+# 4. Conceptual / Abstract Searches
+rest is not a reward for finishing work, it's a requirement for doing it | 17 | conceptual
+identity shapes behavior more than setting goals | 03 | conceptual
+why I try to solve other people's problems when they're upset | 41 | conceptual
+knowing something intellectually but failing to apply it emotionally | 37,42 | conceptual
+when your taste outpaces your skill | 22 | conceptual
+acceptance is not the same as resignation | 55 | conceptual
+two and a half million years of light | 47 | conceptual
+what you can and can't control | 55 | conceptual
+
+# 5. Multi-Note Theme Searches (tests ranking breadth)
+building a consistent daily habit | 03,08,10,24 | thematic
+deliberate physical discomfort for mental benefit | 13,48,56 | thematic
+cooking something low and slow over several hours | 09,26,29,30 | thematic
+learning a new skill as an adult | 21,22,24,48,56 | thematic
+uninterrupted focused work session | 16,19 | thematic
+weekly review and planning reset | 18 | thematic
+earning money outside a regular job | 39,40 | thematic
+
+# 6. Ambiguous / Polysemous Queries (same word, different contexts)
+memory problem | 01 (code leak, not sleep) | ambiguous
+programming | 01 (code) or 12 (workout) | ambiguous
+recovery after training | 11,12,13 (not 01) | ambiguous
+extraction | 28 (coffee, not coding) | ambiguous
+fermentation | 26,29 (sourdough and kimchi) | ambiguous
+plateau | 12 (bench press) or 53 (chess rating) | ambiguous
+
+# 7. Emotionally-Framed Searches (natural language)
+feeling burned out and not being able to name it | 17 | emotional
+grief coming in waves unexpectedly | 43 | emotional
+I have acquaintances but nobody to call in a crisis | 44 | emotional
+going through the motions on things that used to excite me | 17 | emotional
+my plants keep dying | 57 | emotional
+hard to make real friends as an adult | 44 | emotional
+spending money on subscriptions I forgot I had | 36 | emotional
+
+# 8. Null / Off-Topic Searches (should return no strong match)
+cat grooming tips | none | null
+3D printing filament settings | none | null
+cryptocurrency trading | none | null
+how to fix a leaky faucet | none (not plumbing) | null

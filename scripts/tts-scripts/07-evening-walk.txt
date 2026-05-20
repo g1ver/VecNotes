@@ -1,0 +1,1 @@
+Went for a long walk along the river this evening, about an hour. It's a good way to decompress after a heavy work day. I find that problems I've been staring at all day often sort themselves out when I'm not actively thinking about them. Had a clear idea for refactoring the search ranking logic halfway through — went home and wrote it down before I forgot it.

@@ -1,0 +1,8 @@
+appsettings.json
+appsettings.*.json
+!appsettings.example.json
+
+bin/
+obj/
+audio-uploads/
+**/__pycache__/

@@ -1,0 +1,1 @@
+Spent the afternoon tracking down a memory leak in the background job processor. Turned out a closure was holding a reference to the database connection longer than expected — classic mistake. Fixed it by explicitly disposing the context after each job run. Added a note to the code review checklist so we catch this pattern earlier next time.

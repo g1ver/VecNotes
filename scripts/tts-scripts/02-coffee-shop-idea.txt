@@ -1,0 +1,1 @@
+Had an idea while at the coffee shop this morning. What if we built a lightweight notification system for the app — nothing fancy, just webhook callbacks when a note finishes processing. Users could pipe it into Slack or a personal dashboard without polling the API. It would decouple the processing from the client completely. Worth prototyping this week.
